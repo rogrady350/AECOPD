@@ -1,0 +1,59 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# VSCode settings
+.vscode/
+
+# Python virtualenv tools
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment / config
+.env
+*.env
+.env.*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Data files
+*.csv
+*.tsv
+*.h5
+*.json
+*.npy
+*.npz
+*.pkl
+*.log
+
+# Model weights/checkpoints
+*.ckpt
+*.pt
+*.pth
+*.joblib
+
+# Experiment results
+logs/
+runs/
+results/
+output/
+
+# Cache
+.cache/
+__pycache__/
+*.egg-info/
+*.egg
+
+# JupyterLab settings
+.jupyter/
