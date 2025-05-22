@@ -10,7 +10,7 @@ samples_per_sec = 5 #data sampled at 5Hz
 tot_samples = num_secs * samples_per_sec
 start_time = datetime(2025, 1, 1, 8, 0, 0) #Jan 1, 2025, 8:00:00
 
-#Generate timestamps
+#generate timestamps
 timestamps = []
 
 #loop over number of samples
