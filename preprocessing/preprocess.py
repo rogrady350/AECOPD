@@ -1,4 +1,4 @@
-#script to create dummy csv file
+#create simulated patient data CSV file
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta

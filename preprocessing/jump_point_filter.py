@@ -1,5 +1,5 @@
+#filter original patient data and create new CSV file that contains only the detected jump points
 import pandas as pd
-import os
 
 #Config
 INPUT_PATH = "data/simulated_patient_day1.csv"
@@ -8,13 +8,13 @@ OUTPUT_PATH = "data/filtered_jump_points.csv"
 #Constants
 PATIENT_ID = 1
 LABEL = 0 #0: no AECOPD, 1:AECOPD
-THRESHOLD = 0.5 #50% change
+THRESHOLD = 0.5 #>50% change considered jump point
 
 #load orginal data
 df = pd.read_csv(INPUT_PATH) #load CSV into a DataFrame. holds all original  readings
 columns_to_check = df.columns[1:] #skip timestamp (1st column)
 
-filtered_rows = [] #array to hold filtered data
+filtered_rows = [] #array to hold only jump point rows
 
 #loop through each attribute column
 for col in columns_to_check:
@@ -29,6 +29,7 @@ for col in columns_to_check:
         #calculate relative change
         change = abs(curr_val - next_val) / abs(curr_val)
 
+        #add changes above threshold
         if change > THRESHOLD:
             filtered_rows.append({
                 "patient_id": PATIENT_ID,
@@ -37,6 +38,8 @@ for col in columns_to_check:
                 "event_type": col,
                 "event_value": curr_val
             })
+
+        print(f"{col} changed from {curr_val} to {next_val} at {df.at[i, 'timestamp']}") #display changes
 
 #create output DataFrame
 filtered_df = pd.DataFrame(filtered_rows)
