@@ -43,7 +43,7 @@ data = pd.DataFrame({
     "spo2": simulate_signal(95, noise=0.5),        #blood oxygen saturation. norm: 94-100%
     "resrate": simulate_signal(16, noise=0.5),     #respiratory rate (breaths/min). norm: 12-20
     "tidalvolume": simulate_signal(450, noise=10), #volume of air exhaled/breath. norm ~450 mL/breath
-    "minutevent": simulate_signal(8, noise=0.3),  #tot vol of air/min. norm: ~6-10 L/min
+    "minutevent": simulate_signal(8, noise=0.3),   #tot vol of air/min. norm: ~6-10 L/min
     "leak": simulate_signal(2, noise=0.2)          #air leakage from ventilator mask/system. norm: small(~0-3)
 })
 
